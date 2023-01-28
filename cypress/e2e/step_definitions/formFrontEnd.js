@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import { formPage } from '@pages/FormPage'
+import { formPage } from '@pages/FormFrontendPage'
 
 let inquiryText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ipsum magna, pharetra id dolor in, mattis egestas turpis. Integer porta convallis velit'
 let bigString = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in nibh id purus consequat ultricies ut sed sem. Proin et ipsum iaculis, volutpat nibh eu, molestie arcu. Proin eget est quis magna sollicitudin ultrices. Etiam quis gravida quam, a porta cras.'
