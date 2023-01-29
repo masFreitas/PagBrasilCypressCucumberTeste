@@ -5,7 +5,6 @@ class FormPage {
     companyInput: () => cy.get("#Company"),
     websiteInput: () => cy.get("#Website"),
     phoneInput: () => cy.get("#Phone"),
-    errorMessage: () => cy.get('h3[data-test="error"]'),
   }
   textarea = {
     inquiryTextArea: () => cy.get("#Inquiry")
