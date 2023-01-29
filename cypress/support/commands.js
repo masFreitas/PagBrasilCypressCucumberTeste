@@ -23,3 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('sendRequest', (name, email, company, website, phone, inquiry) => {
+    cy.request({
+        url: '/form',
+        method: 'POST',
+        body: {
+            Name: name,
+            Email: email,
+            Company: company,
+            Website: website,
+            Phone: phone,
+            Inquiry: inquiry
+        }
+    }).then(response => {
+        return response
+    })
+})
