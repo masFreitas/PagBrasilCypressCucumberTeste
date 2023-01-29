@@ -11,6 +11,16 @@ Feature: Formulário de dúvidas
         When clico no botão de enviar
         Then o formulário é enviado com sucesso
 
+    Scenario: Envio do formulário sem preencher dados
+        Given não preencho nenhum dado do formulário
+        When clico no botão de enviar
+        Then o sistema exibe a mensagem de erro "Campo Name inválido"
+        And o sistema exibe a mensagem de erro "Campo Email inválido"
+        And o sistema exibe a mensagem de erro "Campo Company inválido"
+        And o sistema exibe a mensagem de erro "Campo Website inválido"
+        And o sistema exibe a mensagem de erro "Campo Phone inválido"
+        And o sistema exibe a mensagem de erro "Campo Inquiry inválido"
+
     #Validações Name
 
     Scenario: Envio de formulário com Name não preenchido

@@ -17,6 +17,20 @@ describe('Teste de Formulário a nivel de API', () => {
             })
     })
 
+    it('Envio de requisição de formulário com dados vazios', () => {
+        cy.sendRequest(null, null, null, null, null, null)
+            .then(res => {
+                expect(res.status).to.be.equal(412)
+                expect(res.body).to.have.property('sucesso', false)
+                expect(res.body).to.have.property('erro', 'Campo Name inválido')
+                expect(res.body).to.have.property('erro', 'Campo Email inválido')
+                expect(res.body).to.have.property('erro', 'Campo Company inválido')
+                expect(res.body).to.have.property('erro', 'Campo Website inválido')
+                expect(res.body).to.have.property('erro', 'Campo Phone inválido')
+                expect(res.body).to.have.property('erro', 'Campo Inquiry inválido')
+            })
+    })
+
     it('Envio de requisição de formulário com Name não preenchido', () => {
         cy.sendRequest(null, 'email@email.com', 'Google', 'https://www.google.com', '(51)99664-8775', inquiryText)
             .then(res => {

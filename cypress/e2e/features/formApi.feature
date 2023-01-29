@@ -8,6 +8,16 @@ Feature: Validação do formulário de dúvidas através da API
         Then recebo a response com o status code 200
         And recebo um body com o atributo sucesso true
 
+    Scenario: Envio de requisição de formulário com dados vazios
+        Given não preencho os dados da requisição
+        Then recebo a response com o status code 412
+        And o sistema exibe a mensagem de erro "Campo Name inválido"
+        And o sistema exibe a mensagem de erro "Campo Email inválido"
+        And o sistema exibe a mensagem de erro "Campo Company inválido"
+        And o sistema exibe a mensagem de erro "Campo Website inválido"
+        And o sistema exibe a mensagem de erro "Campo Phone inválido"
+        And o sistema exibe a mensagem de erro "Campo Inquiry inválido"
+
     #Validações Name
 
     Scenario: Envio de requisição de formulário com Name não preenchido

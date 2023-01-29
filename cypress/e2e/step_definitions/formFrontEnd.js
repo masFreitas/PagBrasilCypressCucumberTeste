@@ -21,6 +21,10 @@ Given("preencho todos os campos corretamente", () => {
     formPage.fillInquiryField(inquiryText)
 });
 
+Given("não preencho nenhum dado do formulário", () => {
+
+});
+
 When("clico no botão de enviar", () => {
     formPage.clickSendButton()
 });
